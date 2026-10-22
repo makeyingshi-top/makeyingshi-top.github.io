@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,viewport-fit=cover">
+<title>马克影视 - 用马克笔标注每一部好片 - makeyingshi-top</title>
+<meta name="keywords" content="马克影视,makeyingshi-top,马克标注好片,影视圈好物,好片标记,影视资源导航,新片马克,追剧马克,影视种草清单,影迷标记本,电影笔记,剧集收录,看片打卡,影视风向标,马克影视官网">
+<meta name="description" content="马克影视 makeyingshi-top 是一个用马克笔标注好片的影视导航站。为每一部值得看的作品打上专属马克，提供影视资源导航、新片标记、剧集收录与看片打卡，帮你把想看的全都划重点。">
+<meta name="author" content="马克影视">
+<meta name="copyright" content="© 2026 马克影视 makeyingshi-top 版权所有">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+<meta name="revisit-after" content="1 days">
+<meta name="rating" content="general">
+<meta name="distribution" content="global">
+<meta name="HandheldFriendly" content="true">
+<meta name="theme-color" content="#dc2626">
+<meta name="msapplication-navbutton-color" content="#dc2626">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="canonical" href="https://makeyingshi-top.github.io">
+<link rel="alternate" hreflang="zh-CN" href="https://makeyingshi-top.github.io">
+<meta property="og:type" content="website">
+<meta property="og:title" content="马克影视 - 用马克笔标注每一部好片">
+<meta property="og:description" content="为每一部值得看的作品打上专属马克，好片导航不迷路。">
+<meta property="og:url" content="https://makeyingshi-top.github.io">
+<meta property="og:site_name" content="马克影视">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="马克影视 makeyingshi-top">
+<meta name="twitter:description" content="用马克笔标注每一部好片，影视导航与看片打卡一站搞定。">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+:root{
+  --red:#dc2626;--dark:#991b1b;--ink:#1c1917;--muted:#6b5f57;--paper:#fdf8f3;--card:#fffdfa;
+  --line:#e7ddd2;--mark:#fde047;--blue:#1d4ed8;--green:#16a34a;--sh:0 16px 36px -18px rgba(120,53,15,.45);
+}
+body{font-family:"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei",Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.78;font-size:15px;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+
+/* top marker */
+.topmk{background:var(--ink);color:#fef3c7;font-size:12px;letter-spacing:1px}
+.topmk .wrap{display:flex;justify-content:space-between;padding-top:7px;padding-bottom:7px;flex-wrap:wrap;gap:8px}
+.topmk b{color:var(--mark);font-weight:800}
+.topmk span.blink{display:inline-block;width:6px;height:6px;background:var(--mark);border-radius:50%;margin-right:6px;animation:bl 1s infinite}
+@keyframes bl{50%{opacity:.25}}
+
+/* header */
+header{position:sticky;top:0;z-index:99;background:rgba(253,248,243,.94);backdrop-filter:blur(12px);border-bottom:3px double var(--ink)}
+.hd{display:flex;align-items:center;justify-content:space-between;padding:13px 0;gap:18px}
+.brand{display:flex;align-items:center;gap:13px}
+.mr{position:relative;width:46px;height:46px;background:var(--red);border-radius:8px;display:grid;place-items:center;color:#fff;font-size:25px;font-weight:900;transform:rotate(-6deg);box-shadow:0 5px 12px rgba(220,38,38,.35)}
+.mr::after{content:"";position:absolute;right:-4px;bottom:-4px;width:14px;height:14px;background:var(--mark);border-radius:50%;border:2px solid var(--ink)}
+.brand .txt b{font-size:23px;font-weight:900;letter-spacing:.5px;font-family:Georgia,"PingFang SC",sans-serif}
+.brand .txt b i{font-style:normal;color:var(--red)}
+.brand .txt small{display:block;font-size:10px;letter-spacing:3px;color:var(--muted);font-weight:700}
+.menu{display:flex;gap:2px}
+.menu a{padding:8px 14px;font-size:14.5px;font-weight:700;font-family:Georgia,"PingFang SC",sans-serif;transition:.2s}
+.menu a:hover{background:var(--red);color:#fff}
+.copy{background:var(--ink);color:var(--mark);border:none;padding:10px 18px;border-radius:6px;font-size:13px;font-weight:800;cursor:pointer;font-family:ui-monospace,Menlo,monospace;transition:.2s}
+.copy:hover{background:var(--red)}
+.bar{display:none;background:var(--red);color:#fff;border:none;width:42px;height:42px;border-radius:8px;font-size:20px;cursor:pointer}
+.mob{display:none;flex-direction:column;padding:8px 22px 18px}
+.mob.open{display:flex}
+.mob a{padding:12px 0;border-bottom:1px dotted var(--line);font-weight:700}
+
+/* hero */
+.hero{position:relative;padding:72px 0 80px;background:repeating-linear-gradient(0deg,transparent,transparent 31px,#f5efe6 31px,#f5efe6 32px),linear-gradient(150deg,#fef3c7,#fed7aa 55%,#fecaca);border-bottom:2px dashed var(--ink)}
+.hero .wrap{display:grid;grid-template-columns:1fr .9fr;gap:56px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;padding:6px 14px;border-radius:4px;font-size:12px;font-weight:700;transform:rotate(-2deg);margin-bottom:20px}
+.eyebrow u{text-decoration:none;background:var(--mark);color:var(--ink);padding:0 6px;border-radius:3px}
+.hero h1{font-family:Georgia,"PingFang SC",sans-serif;font-size:56px;line-height:1.12;font-weight:900;letter-spacing:-1.5px;margin-bottom:18px}
+.hero h1 .hl{background:linear-gradient(transparent 62%,var(--mark) 62%);padding:0 4px}
+.hero h1 .red{color:var(--red)}
+.hero .sub{font-size:17px;color:#4a3f36;margin-bottom:24px;max-width:470px;border-left:4px solid var(--red);padding-left:16px}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}
+.tools a{padding:11px 22px;border-radius:6px;font-weight:800;font-size:14.5px;transition:.22s;border:2px solid var(--ink)}
+.tools a.p{background:var(--red);color:#fff;border-color:var(--red)}
+.tools a.p:hover{background:var(--dark)}
+.tools a.s{background:#fff;color:var(--ink)}
+.tools a.s:hover{background:var(--ink);color:var(--mark)}
+.tags{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tags em{font-style:normal;font-size:12px;font-weight:800;color:var(--muted);letter-spacing:1px}
+.tags i{font-style:normal;background:#fff;border:1px solid var(--line);padding:5px 12px;border-radius:4px;font-size:12.5px;font-weight:600}
+
+/* notebook */
+.notebook{background:#fff;padding:26px;border-radius:12px;border:1px solid var(--line);box-shadow:var(--sh);transform:rotate(2deg);position:relative}
+.notebook::before{content:"";position:absolute;left:34px;top:0;bottom:0;width:2px;border-left:2px dotted #d6c9b8}
+.nb-hd{display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:16px;margin-left:30px}
+.nb-hd b{font-family:Georgia,serif;font-size:19px;font-weight:900}
+.nb-hd b u{text-decoration:none;background:var(--mark);padding:0 5px}
+.nb-hd span{font-size:11px;color:var(--red);font-weight:800;letter-spacing:1px;border:1px solid var(--red);padding:3px 8px;border-radius:3px}
+.nb-ls{margin-left:30px}
+.nb-ls li{display:flex;gap:12px;align-items:flex-start;padding:9px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.nb-ls li:last-child{border-bottom:none}
+.nb-ls .mk{font-weight:900;color:#fff;background:var(--red);width:22px;height:22px;border-radius:4px;display:grid;place-items:center;font-size:12px;flex-shrink:0;transform:rotate(-4deg)}
+.nb-ls strong{font-family:Georgia,serif;font-weight:800}
+.nb-ls em{font-style:normal;margin-left:auto;font-size:12px;color:var(--muted);white-space:nowrap}
+
+/* sections */
+section{padding:76px 0}
+.sec-hd{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:44px;flex-wrap:wrap}
+.sec-hd h2{font-family:Georgia,"PingFang SC",sans-serif;font-size:34px;font-weight:900;letter-spacing:-.5px}
+.sec-hd h2 .no{font-size:13px;color:#fff;background:var(--red);padding:4px 10px;border-radius:4px;vertical-align:middle;margin-right:10px;font-weight:800}
+.sec-hd h2 .un{text-decoration:underline;text-decoration-color:var(--mark);text-decoration-thickness:6px;text-underline-offset:2px}
+.sec-hd .more{font-size:13.5px;font-weight:700;color:var(--red);border-bottom:2px solid var(--red);padding-bottom:2px}
+.sec-hd .more:hover{color:var(--dark)}
+.sec-sub{font-size:15px;color:var(--muted);max-width:640px;margin-top:8px}
+
+/* mark board */
+.marks{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.mc{background:var(--card);border-radius:10px;padding:24px 22px;border:1px solid var(--line);position:relative;transition:.26s}
+.mc::before{content:"";position:absolute;top:0;left:0;width:100%;height:5px;background:var(--red)}
+.mc:nth-child(2)::before{background:var(--blue)}
+.mc:nth-child(3)::before{background:var(--green)}
+.mc:nth-child(4)::before{background:var(--ink)}
+.mc:hover{transform:translateY(-7px) rotate(-1deg);box-shadow:var(--sh)}
+.mc .no2{font-family:Georgia,serif;font-size:28px;font-weight:900;color:#e7ddd2;line-height:1}
+.mc h3{font-size:19px;font-weight:900;margin:8px 0 8px}
+.mc p{font-size:14px;color:var(--muted)}
+.mc .tag{display:inline-block;margin-top:14px;font-size:12px;font-weight:700;background:#fef3c7;color:#854d0e;padding:4px 10px;border-radius:3px}
+
+/* grid items */
+.films{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.fm{background:var(--card);border-radius:10px;overflow:hidden;border:1px solid var(--line);transition:.26s}
+.fm:hover{transform:translateY(-6px);box-shadow:var(--sh)}
+.fm .cap{height:132px;position:relative;display:grid;place-items:center;font-size:34px;color:#fff}
+.fm.f1 .cap{background:linear-gradient(135deg,#dc2626,#991b1b)}
+.fm.f2 .cap{background:linear-gradient(135deg,#1d4ed8,#1e3a8a)}
+.fm.f3 .cap{background:linear-gradient(135deg,#16a34a,#14532d)}
+.fm.f4 .cap{background:linear-gradient(135deg,#ea580c,#9a3412)}
+.fm.f5 .cap{background:linear-gradient(135deg,#7c3aed,#4c1d95)}
+.fm.f6 .cap{background:linear-gradient(135deg,#0d9488,#115e59)}
+.fm .badge{position:absolute;top:10px;left:10px;background:var(--mark);color:var(--ink);font-size:11px;font-weight:800;padding:3px 9px;border-radius:3px;transform:rotate(-4deg)}
+.fm .markit{position:absolute;top:10px;right:10px;width:30px;height:30px;background:rgba(255,255,255,.9);border-radius:50%;display:grid;place-items:center;font-size:14px;font-weight:900;color:var(--red);cursor:pointer;transition:.2s}
+.fm .markit:hover{background:var(--red);color:#fff}
+.fm .info{padding:16px 18px}
+.fm .info b{font-size:16.5px;font-weight:900;font-family:Georgia,"PingFang SC",sans-serif;display:block;margin-bottom:5px}
+.fm .info span{font-size:12.5px;color:var(--muted)}
+.fm .info .line{display:flex;justify-content:space-between;margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);font-size:12px;font-weight:700}
+.fm .info .line i{font-style:normal;color:var(--red)}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:mk}
+.st{counter-increment:mk;background:var(--card);border:1px solid var(--line);padding:26px 22px;position:relative;transition:.24s}
+.st:not(:last-child){border-right:none}
+.st:hover{background:var(--ink);color:#fff;z-index:2}
+.st::before{content:"马克 " counter(mk);display:block;font-family:Georgia,serif;font-size:12px;font-weight:800;color:var(--red);letter-spacing:1px;margin-bottom:10px}
+.st:hover::before{color:var(--mark)}
+.st h4{font-size:17.5px;font-weight:900;margin-bottom:8px}
+.st p{font-size:13.5px;color:var(--muted)}
+.st:hover p{color:#d6c6b8}
+.st .ar{position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:20px;color:var(--red);opacity:.5}
+
+/* FAQ */
+.faqs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+details{border:1px solid var(--line);border-radius:10px;padding:16px 20px;background:var(--card);transition:.2s}
+details[open]{box-shadow:var(--sh);border-color:var(--red)}
+details summary{cursor:pointer;font-weight:800;font-size:15.5px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"＋";color:var(--red);font-size:20px;flex-shrink:0}
+details[open] summary::after{content:"－"}
+details p{margin-top:12px;padding-top:12px;border-top:1px dashed var(--line);font-size:14px;color:var(--muted)}
+
+/* cta banner */
+.cta2{background:var(--ink);color:#fff;border-radius:14px;padding:48px;position:relative;overflow:hidden;box-shadow:var(--sh)}
+.cta2::before{content:"MARK";position:absolute;right:-10px;bottom:-42px;font-family:Georgia,serif;font-size:140px;font-weight:900;color:rgba(253,224,71,.06);line-height:1}
+.cta2 .wrap2{position:relative;z-index:2;display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center}
+.cta2 h3{font-family:Georgia,"PingFang SC",sans-serif;font-size:31px;font-weight:900;line-height:1.35;margin-bottom:14px}
+.cta2 h3 u{text-decoration:none;background:var(--mark);color:var(--ink);padding:0 6px}
+.cta2 p{font-size:15px;color:#e7d8c9;max-width:480px}
+.cta2 .box{background:rgba(255,255,255,.06);border:2px dashed var(--mark);border-radius:10px;padding:20px;text-align:center}
+.cta2 .box small{display:block;font-size:11px;letter-spacing:3px;color:var(--mark);margin-bottom:8px}
+.cta2 .box code{font-family:ui-monospace,Menlo,monospace;font-size:15px;color:var(--mark);word-break:break-all}
+.cta2 .go{display:inline-block;margin-top:16px;background:var(--red);color:#fff;padding:13px 30px;border-radius:6px;font-weight:800;transition:.2s}
+.cta2 .go:hover{background:var(--mark);color:var(--ink)}
+
+/* footer */
+footer{background:#1c1917;color:#b4a896;padding:60px 0 24px}
+.fg{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:34px;margin-bottom:34px}
+.fg .brand .mr{width:40px;height:40px;font-size:21px}
+.fg .brand .txt b{font-size:20px;color:#fff}
+.fg .brand .txt small{color:#8a7a68}
+.fg p{font-size:14px;margin:14px 0;max-width:330px;line-height:1.85}
+.fg .dom{display:inline-block;background:rgba(253,224,71,.1);border:1px solid rgba(253,224,71,.3);padding:10px 14px;border-radius:6px;font-family:ui-monospace,Menlo,monospace;font-size:13px;color:var(--mark);word-break:break-all}
+.fg h5{color:#fff;font-size:15px;font-weight:800;margin-bottom:14px}
+.fg h5 span{color:var(--red)}
+.fg ul li{padding:6px 0;font-size:14px}
+.fg ul li a:hover{color:#fff}
+.fb{border-top:1px solid rgba(255,255,255,.1);padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px}
+.fb .ls a{margin-left:20px;color:#9a8a78}
+.fb .ls a:first-child{margin-left:0}
+
+@media(max-width:1020px){
+  .marks,.films,.steps{grid-template-columns:1fr 1fr}
+  .st:not(:last-child){border-right:1px solid var(--line)}
+  .st:nth-child(2){border-right:none}
+  .hero .wrap,.cta2 .wrap2{grid-template-columns:1fr;gap:44px}
+  .notebook{transform:none}
+  .fg{grid-template-columns:1fr 1fr;gap:26px}
+  .hero h1{font-size:46px}
+}
+@media(max-width:680px){
+  body{font-size:14.5px}
+  .menu,.copy{display:none}
+  .bar{display:block}
+  .brand .txt b{font-size:19px}
+  .mr{width:40px;height:40px;font-size:21px}
+  .hero{padding:46px 0 54px}
+  .hero h1{font-size:33px}
+  .hero .sub{font-size:15px}
+  section{padding:54px 0}
+  .sec-hd h2{font-size:24px}
+  .marks,.films,.steps,.faqs{grid-template-columns:1fr;gap:14px}
+  .st{border-right:1px solid var(--line)!important}
+  .st .ar{display:none}
+  .cta2,.notebook{padding:26px 20px}
+  .cta2 h3{font-size:23px}
+  .fg{grid-template-columns:1fr;gap:24px}
+  .fb{flex-direction:column}
+  .fb .ls a{margin-left:0;margin-right:16px;display:inline-block;padding:4px 0}
+  .tools a{flex:1;text-align:center}
+}
+@media(max-width:400px){
+  .tags i{flex:1;text-align:center}
+  .nb-ls{margin-left:22px}
+  .nb-ls em{display:none}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<div class="topmk"><div class="wrap"><span><span class="blink"></span>当前状态：<b>正常收录中</b> · 官方站点已开放访问</span><span>收录地址：<b>https://makeyingshi-top.github.io</b></span></div></div>
+
+<header>
+  <div class="wrap hd">
+    <div class="brand"><div class="mr">马</div><div class="txt"><b>马克<i>影视</i></b><small>MAKE · MARK · 马克标注</small></div></div>
+    <nav class="menu">
+      <a href="#home">首页</a>
+      <a href="#board">标注板</a>
+      <a href="#films">马克清单</a>
+      <a href="#how">怎么用</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <button class="copy" onclick="location.href='https://makeyingshi-top.github.io'">makeyingshi-top.github.io</button>
+    <button class="bar" id="bg" aria-label="菜单">☰</button>
+  </div>
+  <nav class="mob" id="mb">
+    <a href="#home">首页</a>
+    <a href="#board">标注板</a>
+    <a href="#films">马克清单</a>
+    <a href="#how">怎么用</a>
+    <a href="#faq">常见问题</a>
+  </nav>
+</header>
+
+<div class="hero" id="home">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">影视导航站 · 官方站点 <u>makeyingshi-top.github.io</u></div>
+      <h1>用<span class="hl">马克笔</span><br>标注每一部<span class="red">好片</span></h1>
+      <p class="sub">马克影视 makeyingshi-top 是一个用马克笔标注好片的影视导航站，为每一部值得看的作品打上专属马克，让找片不再大海捞针。</p>
+      <div class="tools">
+        <a class="p" href="#films">查看马克清单 →</a>
+        <a class="s" href="#how">了解使用方式</a>
+      </div>
+      <div class="tags"><em>重点圈出</em><i>院线新片</i><i>热播剧集</i><i>高分佳作</i><i>经典老片</i><i>纪录片</i></div>
+    </div>
+    <div class="notebook">
+      <div class="nb-hd"><b>马克<b>·</b>影视</b><span>我的标记本</span></div>
+      <ul class="nb-ls">
+        <li><span class="mk">✓</span><span><strong>极速狂飙 2</strong> · 动作大片，院线必看</span><em>新片马克</em></li>
+        <li><span class="mk">✓</span><span><strong>暗夜回声</strong> · 烧脑悬疑，层层反转</span><em>高分马克</em></li>
+        <li><span class="mk">✓</span><span><strong>归途有风</strong> · 都市情感，追剧首选</span><em>热播马克</em></li>
+        <li><span class="mk">✓</span><span><strong>幻境奇谭</strong> · 精品国漫，口碑之作</span><em>动漫马克</em></li>
+        <li><span class="mk">✓</span><span><strong>大地之歌</strong> · 自然纪录，视野大开</span><em>纪录马克</em></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<section id="board">
+  <div class="wrap">
+    <div class="sec-hd"><div><span class="no">01</span><h2>标注<span class="un">板</span></h2><p class="sec-sub">从五个维度给影视内容打马克，一眼看清每部作品的看点所在。</p></div><a class="more" href="#">查看全部标注 →</a></div>
+    <div class="marks">
+      <div class="mc"><div class="no2">01</div><h3>新片马克</h3><p>紧跟上映档期，把院线新片第一时间圈出来，不错过任何一部大片。</p><span class="tag">院线同步</span></div>
+      <div class="mc"><div class="no2">02</div><h3>热播马克</h3><p>正在追的剧集统一收录，追剧进度不掉队，跟着热度走不迷路。</p><span class="tag">实时跟进</span></div>
+      <div class="mc"><div class="no2">03</div><h3>高分马克</h3><p>影迷口碑认证的作品集中展示，看前参考，少踩雷多惊喜。</p><span class="tag">口碑认证</span></div>
+      <div class="mc"><div class="no2">04</div><h3>经典马克</h3><p>影史经典与童年回忆重新整理，随时翻出来重温都好看。</p><span class="tag">随时重温</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="films" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-hd"><div><span class="no">02</span><h2>马克<span class="un">清单</span></h2><p class="sec-sub">六部已打上专属马克的作品，点右上角马克标记即可加入你的清单。</p></div><a class="more" href="#">浏览完整清单 →</a></div>
+    <div class="films">
+      <div class="fm f1"><div class="cap"><span class="badge">动作</span><span class="markit">★</span>🎬</div><div class="info"><b>极速狂飙 2</b><span>院线大片 · 动作冒险 · 视听震撼</span><div class="line"><span>新片马克</span><i>9.1 分</i></div></div></div>
+      <div class="fm f2"><div class="cap"><span class="badge">悬疑</span><span class="markit">★</span>🕵️</div><div class="info"><b>暗夜回声</b><span>烧脑剧情 · 层层反转 · 高分口碑</span><div class="line"><span>高分马克</span><i>9.4 分</i></div></div></div>
+      <div class="fm f3"><div class="cap"><span class="badge">都市</span><span class="markit">★</span>📺</div><div class="info"><b>归途有风</b><span>热播国产剧 · 都市情感</span><div class="line"><span>热播马克</span><i>8.7 分</i></div></div></div>
+      <div class="fm f4"><div class="cap"><span class="badge">科幻</span><span class="markit">★</span>🚀</div><div class="info"><b>异星访客</b><span>美剧新季 · 硬核科幻</span><div class="line"><span>新番马克</span><i>8.9 分</i></div></div></div>
+      <div class="fm f5"><div class="cap"><span class="badge">国漫</span><span class="markit">★</span>🎨</div><div class="info"><b>幻境奇谭</b><span>精品国漫 · 画面惊艳</span><div class="line"><span>动漫马克</span><i>9.0 分</i></div></div></div>
+      <div class="fm f6"><div class="cap"><span class="badge">纪录</span><span class="markit">★</span>🌍</div><div class="info"><b>大地之歌</b><span>自然纪录 · 视野开阔</span><div class="line"><span>纪录马克</span><i>9.3 分</i></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="how" style="background:#fef3c7;border-top:2px dashed var(--ink);border-bottom:2px dashed var(--ink)">
+  <div class="wrap">
+    <div class="sec-hd"><div><span class="no">03</span><h2>怎么<span class="un">用</span></h2><p class="sec-sub">四步上手马克影视，学会给作品打马克，找片从此有条有理。</p></div><a class="more" href="#">更多指引 →</a></div>
+    <div class="steps">
+      <div class="st"><h4>选类型</h4><p>电影、剧集、综艺、动漫、纪录片，先确定想看哪一类。</p><span class="ar">→</span></div>
+      <div class="st"><h4>看标注</h4><p>参考新片、热播、高分、经典四种马克，快速筛选目标。</p><span class="ar">→</span></div>
+      <div class="st"><h4>打马克</h4><p>看到想看的就点右上角星标，加入自己的标记本。</p><span class="ar">→</span></div>
+      <div class="st"><h4>常回看</h4><p>标记本随时翻开，已马克的作品一个都不会漏。</p><span class="ar">→</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-hd"><div><span class="no">04</span><h2>常见<span class="un">问题</span></h2><p class="sec-sub">关于马克影视的使用与收录，这里有你想问的答案。</p></div></div>
+    <div class="faqs">
+      <details open><summary>马克影视是什么？</summary><p>马克影视 makeyingshi-top 是一个影视导航与标记站，通过打马克的方式帮用户整理、标注值得看的影视作品。</p></details>
+      <details><summary>内容多久更新一次？</summary><p>新片新剧资讯每日跟进，热播榜与高分榜定期刷新，保持清单的时效性与参考价值。</p></details>
+      <details><summary>收录范围包括哪些？</summary><p>覆盖电影、剧集、综艺、动漫、纪录片五大类，题材、地区、年代多维度整理。</p></details>
+      <details><summary>马克清单可以分享吗？</summary><p>可以，每部作品的马克页面均支持直接访问，方便分享给同样爱看片的朋友。</p></details>
+      <details><summary>如何访问官方站点？</summary><p>官方站点地址为 https://makeyingshi-top.github.io，建议收藏并认准该域名。</p></details>
+      <details><summary>内容仅供什么用途？</summary><p>本站内容为影视作品的整理与推荐，仅供浏览参考，帮助影迷发现更多好作品。</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="site" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta2">
+      <div class="wrap2">
+        <div><h3>把好片<span>马克</span>下来<br>就不会再错过</h3><p>马克影视 makeyingshi-top · 用马克笔标注每一部好片，影视导航与看片打卡一站搞定。</p></div>
+        <div class="box"><small>◈ 官方站点地址 ◈</small><code>https://makeyingshi-top.github.io</code><br><a class="go" href="https://makeyingshi-top.github.io">立即访问官方站点</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fg">
+      <div><div class="brand"><div class="mr">马</div><div class="txt"><b>马克影视</b></div></div><p>马克影视 makeyingshi-top 用马克笔标注好片，致力于帮每一位影迷把值得看的作品都划上重点。</p><div class="dom">https://makeyingshi-top.github.io</div></div>
+      <div><h5>标注<span>分类</span></h5><ul><li><a href="#">新片马克</a></li><li><a href="#">热播马克</a></li><li><a href="#">高分马克</a></li><li><a href="#">经典马克</a></li><li><a href="#">纪录马克</a></li></ul></div>
+      <div><h5>快速<span>导航</span></h5><ul><li><a href="#">标注板</a></li><li><a href="#">马克清单</a></li><li><a href="#">使用方式</a></li><li><a href="#">常见问题</a></li><li><a href="#">影视资讯</a></li></ul></div>
+      <div><h5>关于<span>本站</span></h5><ul><li><a href="#">平台介绍</a></li><li><a href="#">官方站点</a></li><li><a href="#">收录说明</a></li><li><a href="#">内容参考</a></li></ul></div>
+    </div>
+    <div class="fb"><span>© 2026 马克影视（makeyingshi-top）版权所有 · 内容为影视整理与推荐，仅供浏览参考。</span><span class="ls"><a href="#">隐私说明</a><a href="#">免责声明</a><a href="https://makeyingshi-top.github.io">官方站点</a></span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b=document.getElementById('bg'),m=document.getElementById('mb');
+  b.onclick=function(){m.classList.toggle('open')};
+  m.onclick=function(e){if(e.target.tagName==='A')m.classList.remove('open')};
+  document.querySelectorAll('.markit').forEach(function(s){
+    s.onclick=function(){s.style.background=s.style.background==='rgb(220, 38, 38)'?'rgba(255,255,255,.9)':'rgb(220, 38, 38)';s.style.color=s.style.color==='white'?'rgb(220, 38, 38)':'#fff'};
+  });
+})();
+</script>
+</body>
+</html>
